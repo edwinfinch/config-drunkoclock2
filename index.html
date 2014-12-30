@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drunk O' Clock</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+    	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-10779011-1', 'edwinfinch.github.io');
+	  ga('send', 'pageview');
+	</script>
+  </head>
+  <body>
+    <div data-role="page" id="main">
+      <div data-role="header" class="jqm-header">
+        <h1>Drunk O' Clock</h1>
+      </div>
+
+      <div data-role="content">
+
+<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
+
+    <div data-role="collapsible">
+        <h3>Note from developer</h3>
+<p>
+Hello, and welcome to Drunk O' Clock if you've never used it before. Thanks for downloading my watchface
+and I hope you enjoy it :)<br><br>
+
+I have a couple things to say,<br>
+1. Please stop emailing me about how this watchface swears, how it's offensive, etc. Don't download this watchface
+if you are offended about this. You downloaded it knowing that it's offensive.<br>
+2. If you are upgrading from 1.x and are having issues, please <a href="mailto:contact@edwinfinch.com">email me.</a>
+<br><br>
+
+Enjoy Drunk O' Clock, mother fucker :)
+</p>
+    </div>
+
+ <div data-role="collapsible">
+        <h3>Look and Feel</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Theme</legend>
+        <input name="key0" id="key0-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key0-0">Dark</label>
+        <input name="key0" id="key0-1" value="1" type="radio">
+        <label for="key0-1">Light</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Word Pack</legend>
+    <i>Change any words at any time in the translation section of the settings.
+    </i>
+        <input name="key1" id="key1-0" value="0" checked="checked" type="radio">
+        <label for="key1-0">Sober (light words, like "frikken")</label>
+        <input name="key1" id="key1-1" value="1" type="radio">
+        <label for="key1-1">Tipsy (mild words, like "shitting")</label>
+	<input name="key1" id="key1-2" value="2" type="radio">
+        <label for="key1-2">Wasted (heavy words, like "fucking")</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Progressive Drunken'ness</legend>
+    <i>Enabling this will change how drunk the watchface is depending on the time of day.
+    </i>
+        <input name="key19" id="key19-0" value="0" checked="checked" type="radio">
+        <label for="key19-0">Off</label>
+        <input name="key19" id="key19-1" value="1" type="radio">
+        <label for="key19-1">On</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+    <div class="ui-field-contain">
+      <label for="key61" id="label_key61">Swear word update frequency (minutes)</label>
+      <input name="key61" id="trans_key61" placeholder="5" value="5" data-mini="true" type="text" maxlength="2">
+    </div>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Animations</legend>
+        <input name="key18" id="key18-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key18-1">Enabled</label>
+        <input name="key18" id="key18-0" value="0" type="radio">
+        <label for="key18-0">Disabled</label>
+</fieldset>
+
+    </div>
+<div data-role="collapsible">
+        <h3>Date/Time</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Custom Date Format</legend>
+    <i>Enable a format other than "[Swear], it's [day]"
+    </i>
+        <input name="key16" id="key16-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key16-0">Disabled</label>
+        <input name="key16" id="key16-1" value="1" type="radio">
+        <label for="key16-1">Enabled</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Date Format</legend>
+    <i>This applies if you have the above option enabled.
+    </i>
+        <input name="key17" id="key17-0" value="0" checked="checked" type="radio">
+        <label for="key17-0">DD/MM/YY</label>
+        <input name="key17" id="key17-1" value="1" type="radio">
+        <label for="key17-1">MM/DD/YY</label>
+	<input name="key17" id="key17-6" value="6" type="radio">
+        <label for="key17-6">June 8th, 2010</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Seconds</legend>
+    <i>Seconds will show up in the top right corner of the screen.</i>
+	<input name="key4" id="key4-0" value="0" checked="checked" type="radio">
+        <label for="key4-0">Off</label>
+        <input name="key4" id="key4-1" value="1" type="radio">
+        <label for="key4-1">On</label>
+</fieldset>
+
+</div>
+
+    <div data-role="collapsible">
+        <h3>Features</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Extra Screen</legend>
+	<i>If enabled, shake the watch to view extra information.</i>
+        <input name="key7" id="key7-1" value="1" checked="checked" type="radio">
+        <label for="key7-1">On</label>
+        <input name="key7" id="key7-0" value="0" type="radio">
+        <label for="key7-0">Off</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Battery Bar</legend>
+	<i>If enabled, a white bar will be displayed below the bottom slot indicating the watch's battery level.</i>
+        <input name="key8" id="key8-1" value="1" checked="checked" type="radio">
+        <label for="key8-1">On</label>
+        <input name="key8" id="key8-0" value="0" type="radio">
+        <label for="key8-0">Off</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Bluetooth reconnect alert</legend>
+        <input name="key2" id="key2-0" value="0" checked="checked" type="radio">
+        <label for="key2-0">Off</label>
+        <input name="key2" id="key2-1" value="0" type="radio">
+        <label for="key2-1">On</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Bluetooth reconnect alert</legend>
+        <input name="key3" id="key3-0" value="0" checked="checked" type="radio">
+        <label for="key3-0">Off</label>
+        <input name="key3" id="key3-1" value="0" type="radio">
+        <label for="key3-1">On</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Bottom Slot</legend>
+	<i>Insert X into the bottom line, below the time.</i>
+        <input name="key1" id="key1-0" value="0" checked="checked" type="radio">
+        <label for="key1-0">Date (change format in 'Date/Time')</label>
+        <input name="key1" id="key1-1" value="1" type="radio">
+        <label for="key1-1">Bluetooth status</label>
+        <input name="key1" id="key1-6" value="6" type="radio">
+        <label for="key1-6">Custom text</label>
+        <input name="key1" id="key1-7" value="7" type="radio">
+        <label for="key1-7">Temperature</label>
+        <input name="key1" id="key1-8" value="8" type="radio">
+        <label for="key1-8">Nothing</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h0>Custom Slot Text:</h0></legend>
+    <div class="ui-field-contain">
+      <input name="key10" id="slotcustomtext" placeholder="Enter custom slot text" value="Only 90s kids" data-mini="true" type="text" maxlength="21">
+    </div>
+</fieldset>
+
+    </div>
+    <div data-role="collapsible">
+        <h3>Weather</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Temperature Preference</legend>
+        	<input name="key63" id="key63-0" value="0" checked="checked" type="radio">
+        <label for="key63-0">Celsius</label>
+		<input name="key63" id="key63-1" value="1" type="radio">
+        <label for="key63-1">Fahrenheit</label>
+</fieldset>
+
+<i>Drunk O' Clock now supports custom locations. Please enter your location in the following format:
+<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]</b><br><br></i>
+
+Entering it in incorrectly can result in errors. If you want this feature off, leave the field completely blank
+or type in "noLOC" without quotes.
+
+	<div class="ui-field-contain">
+      <label for="key60" id="label_key30">Custom City/location:</label>
+      <input name="key60" id="trans_key30" placeholder="Toronto,ca" value="noLOC" data-mini="true" type="text" maxlength="8">
+    </div>
+
+    </div>
+    
+<div data-role="collapsible" >
+        <h3>Sober Word Translations</h3>
+<fieldset data-role="controlgroup" data-mini="true">
+    <div class="ui-field-contain">
+      <label for="key30" id="label_key30">flippin:</label>
+      <input name="key30" id="trans_key30" placeholder="Enter Translation" value="flippin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key31" id="label_key31">frikken:</label>
+      <input name="key31" id="trans_key31" placeholder="Enter Translation" value="frikken" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key32" id="label_key32">darnit:</label>
+      <input name="key32" id="trans_key32" placeholder="Enter Translation" value="darnit" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key33" id="label_key33">bangin:</label>
+      <input name="key33" id="trans_key33" placeholder="Enter Translation" value="bangin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key30" id="label_key30">truckin:</label>
+      <input name="key30" id="trans_key30" placeholder="Enter Translation" value="truckin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key31" id="label_key31">crappin:</label>
+      <input name="key31" id="trans_key31" placeholder="Enter Translation" value="crappin" data-mini="true" type="text" maxlength="8">
+    </div>
+</fieldset>
+    </div>
+    
+    <div data-role="collapsible" >
+        <h3>Tipsy Word Translations</h3>
+<fieldset data-role="controlgroup" data-mini="true">
+    <div class="ui-field-contain">
+      <label for="key40" id="label_key40">shittin:</label>
+      <input name="key40" id="trans_key40" placeholder="Enter Translation" value="shittin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key41" id="label_key41">cocking:</label>
+      <input name="key41" id="trans_key41" placeholder="Enter Translation" value="cocking" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key42" id="label_key42">twattin:</label>
+      <input name="key42" id="trans_key42" placeholder="Enter Translation" value="twattin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key43" id="label_key43">jizzing:</label>
+      <input name="key43" id="trans_key43" placeholder="Enter Translation" value="jizzing" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key40" id="label_key40">pissing:</label>
+      <input name="key40" id="trans_key40" placeholder="Enter Translation" value="pissing" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key41" id="label_key40">bastard:</label>
+      <input name="key41" id="trans_key40" placeholder="Enter Translation" value="bastard" data-mini="true" type="text" maxlength="8">
+    </div>
+</fieldset>
+    </div>
+    
+        <div data-role="collapsible" >
+        <h3>Wasted Word Translations</h3>
+<fieldset data-role="controlgroup" data-mini="true">
+    <div class="ui-field-contain">
+      <label for="key10" id="label_key10">fuckin:</label>
+      <input name="key10" id="trans_key10" placeholder="Enter Translation" value="fuckin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key11" id="label_key11">bitchin:</label>
+      <input name="key11" id="trans_key11" placeholder="Enter Translation" value="bitchin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key12" id="label_key12">shittin:</label>
+      <input name="key12" id="trans_key12" placeholder="Enter Translation" value="shittin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key13" id="label_key13">fisting:</label>
+      <input name="key13" id="trans_key13" placeholder="Enter Translation" value="fisting" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key10" id="label_key10">friggin:</label>
+      <input name="key10" id="trans_key10" placeholder="Enter Translation" value="friggin" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key11" id="label_key11">fuckity:</label>
+      <input name="key11" id="trans_key11" placeholder="Enter Translation" value="fuckity" data-mini="true" type="text" maxlength="8">
+    </div>
+</fieldset>
+    </div>
+    
+  
+    <div data-role="collapsible">
+        <h3>Information and Support</h3>
+<p>
+<b>Credits:</b><br> Edwin Finch - Developer<br><br>
+<i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
+
+<b><i>SUPPORT</i></b><br>
+<p>Please contact <a href="mailto:contact@edwinfinch.com">contact@edwinfinch.com</a> if you need any technical support, want to
+	report a bug that you are experiencing, or suggest a feature. I will get back to you 
+	within a day (most likely) and try to fix it for you ASAP.
+	<br><br>
+	If you want to see the rest of my software, go to www.edwinfinch.com/pebble/
+</p>
+</p>
+
+</p>
+    </div>
+</div>
+<br />
+        <div class="ui-body ui-body-c">
+          <fieldset class="ui-grid-a">
+              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Save</button></div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <script>
+      function saveOptions() {
+        var options = {
+          'theme':     Number( $("input[name=key4]:checked").val() ),
+		  'wordpack':     Number( $("input[name=key1]:checked").val() ),
+		  'btdisalert':     Number( $("input[name=key2]:checked").val() ),
+		  'btrealert':     Number( $("input[name=key3]:checked").val() ),
+		  'seconds':     Number( $("input[name=key4]:checked").val() ),
+		  'bottomslot':     Number( $("input[name=key1]:checked").val() ),
+		  'updateinterval':     Number( $("input[name=key6]:checked").val() ),
+		  'extrascreen':     Number( $("input[name=key7]:checked").val() ),
+		  'batterybar':     Number( $("input[name=key8]:checked").val() ),
+		  'vibeonupdate': Number( $("input[name=key9]:checked").val() ),
+		  'fetchtype': Number( $("input[name=key10]:checked").val() ),
+		  'bootsplash': Number( $("input[name=key11]:checked").val() ),
+		  'updatefrequency': Number( $("input[name=key12]:checked").val() ),
+		  'autoclose': Number( $("input[name=key13]:checked").val() ),
+		  'weathertimer': Number( $("input[name=key11]:checked").val() ),
+		  'customdate': Number( $("input[name=key16]:checked").val() ),
+		  'dateformat': Number( $("input[name=key17]:checked").val() ),
+		  'animations': Number( $("input[name=key18]:checked").val() ),
+		  'progressivedrunk': Number( $("input[name=key19]:checked").val() ),
+		  'hourlyvibe': Number( $("input[name=key20]:checked").val() ),
+		  'temppref': Number( $("input[name=key63]:checked").val() ),
+		  'slotcustomtext': $("input[name=key10]").val(),
+		  'trans_sober1': $("input[name=key30]").val(),
+          	  'trans_sober2': $("input[name=key31]").val(),
+          	  'trans_sober3': $("input[name=key32]").val(),
+          	  'trans_sober0': $("input[name=key33]").val(),
+          	  'trans_sober1': $("input[name=key30]").val(),
+          	  'trans_sober6': $("input[name=key31]").val(),
+          	  'trans_sober7': $("input[name=key36]").val(),
+          	  'trans_sober8': $("input[name=key37]").val(),
+          	  'trans_tipsy1': $("input[name=key40]").val(),
+          	  'trans_tipsy2': $("input[name=key41]").val(),
+          	  'trans_tipsy3': $("input[name=key42]").val(),
+          	  'trans_tipsy0': $("input[name=key43]").val(),
+          	  'trans_tipsy1': $("input[name=key40]").val(),
+          	  'trans_tipsy6': $("input[name=key41]").val(),
+          	  'trans_tipsy7': $("input[name=key46]").val(),
+          	  'trans_tipsy8': $("input[name=key46]").val(),
+          	  'trans_wasted1': $("input[name=key10]").val(),
+          	  'trans_wasted2': $("input[name=key11]").val(),
+          	  'trans_wasted3': $("input[name=key12]").val(),
+          	  'trans_wasted0': $("input[name=key13]").val(),
+          	  'trans_wasted1': $("input[name=key10]").val(),
+          	  'trans_wasted6': $("input[name=key11]").val(),
+          	  'longitude_c': $("input[name=key60]").val(),
+          	  'latitude_c': $("input[name=key61]").val(),
+          	  
+        }
+        return options;
+      }
+      $().ready(function() {
+       if (typeof window.localStorage !== "undefined") {
+       	console.log("Not undefined :)");
+        if (window.localStorage.pebble_drunkoclock_options) {
+          ls_pto = JSON.parse(window.localStorage.pebble_drunkoclock_options);
+          // the Pebble webview dies on the next line...
+          $("input[name=key4][id=key4-"+ls_pto["theme"]+"]").prop('checked',true);
+          $("input[name=key4]").checkboxradio('refresh');
+          $("input[name=key1][id=key1-"+ls_pto["wordpack"]+"]").prop('checked',true);
+          $("input[name=key1]").checkboxradio('refresh');
+          $("input[name=key2][id=key2-"+ls_pto["btdisalert"]+"]").prop('checked',true);
+          $("input[name=key2]").checkboxradio('refresh');
+          $("input[name=key3][id=key3-"+ls_pto["btrealert"]+"]").prop('checked',true);
+          $("input[name=key3]").checkboxradio('refresh');
+          $("input[name=key4][id=key4-"+ls_pto["seconds"]+"]").prop('checked',true);
+          $("input[name=key4]").checkboxradio('refresh');
+          $("input[name=key1][id=key1-"+ls_pto["bottomslot"]+"]").prop('checked',true);
+          $("input[name=key1]").checkboxradio('refresh');
+          $("input[name=key6][id=key6-"+ls_pto["updateinterval"]+"]").prop('checked',true);
+          $("input[name=key6]").checkboxradio('refresh');
+          $("input[name=key7][id=key7-"+ls_pto["extrascreen"]+"]").prop('checked',true);
+          $("input[name=key7]").checkboxradio('refresh');
+          $("input[name=key8][id=key8-"+ls_pto["batterybar"]+"]").prop('checked',true);
+          $("input[name=key8]").checkboxradio('refresh');
+          $("input[name=key9][id=key9-"+ls_pto["vibeonupdate"]+"]").prop('checked',true);
+          $("input[name=key9]").checkboxradio('refresh');
+          $("input[name=key10][id=key10-"+ls_pto["fetchtype"]+"]").prop('checked',true);
+          $("input[name=key10]").checkboxradio('refresh');
+          $("input[name=key11][id=key11-"+ls_pto["bootsplash"]+"]").prop('checked',true);
+          $("input[name=key11]").checkboxradio('refresh');
+          $("input[name=key12][id=key12-"+ls_pto["updatefrequency"]+"]").prop('checked',true);
+          $("input[name=key12]").checkboxradio('refresh');
+          $("input[name=key13][id=key13-"+ls_pto["autoclose"]+"]").prop('checked',true);
+          $("input[name=key13]").checkboxradio('refresh');
+          $("input[name=key11][id=key11-"+ls_pto["weathertimer"]+"]").prop('checked',true);
+          $("input[name=key11]").checkboxradio('refresh');
+          $("input[name=key16][id=key16-"+ls_pto["customdate"]+"]").prop('checked',true);
+          $("input[name=key16]").checkboxradio('refresh');
+          $("input[name=key17][id=key17-"+ls_pto["dateformat"]+"]").prop('checked',true);
+          $("input[name=key17]").checkboxradio('refresh');
+          $("input[name=key18][id=key18-"+ls_pto["animations"]+"]").prop('checked',true);
+          $("input[name=key18]").checkboxradio('refresh');
+          $("input[name=key19][id=key19-"+ls_pto["progressivedrunk"]+"]").prop('checked',true);
+          $("input[name=key19]").checkboxradio('refresh');
+          $("input[name=key63][id=key63-"+ls_pto["temppref"]+"]").prop('checked',true);
+          $("input[name=key63]").checkboxradio('refresh');
+          if ("trans_sober1" in ls_pto) {
+            $("input[name=key10]").val(ls_pto["slotcustomtext"]);
+            $("input[name=key30]").val(ls_pto["trans_sober1"]);
+            $("input[name=key31]").val(ls_pto["trans_sober2"]);
+            $("input[name=key32]").val(ls_pto["trans_sober3"]);
+            $("input[name=key33]").val(ls_pto["trans_sober0"]);
+            $("input[name=key30]").val(ls_pto["trans_sober1"]);
+            $("input[name=key31]").val(ls_pto["trans_sober6"]);
+            $("input[name=key36]").val(ls_pto["trans_sober7"]);
+            $("input[name=key37]").val(ls_pto["trans_sober8"]);
+          }
+          if ("trans_tipsy1" in ls_pto) {
+            $("input[name=key40]").val(ls_pto["trans_tipsy1"]);
+            $("input[name=key41]").val(ls_pto["trans_tipsy2"]);
+            $("input[name=key42]").val(ls_pto["trans_tipsy3"]);
+            $("input[name=key43]").val(ls_pto["trans_tipsy0"]);
+            $("input[name=key40]").val(ls_pto["trans_tipsy1"]);
+            $("input[name=key41]").val(ls_pto["trans_tipsy6"]);
+            $("input[name=key46]").val(ls_pto["trans_tipsy7"]);
+            $("input[name=key47]").val(ls_pto["trans_tipsy8"]);
+          }
+          if ("trans_wasted1" in ls_pto) {
+            $("input[name=key10]").val(ls_pto["trans_wasted1"]);
+            $("input[name=key11]").val(ls_pto["trans_wasted2"]);
+            $("input[name=key12]").val(ls_pto["trans_wasted3"]);
+            $("input[name=key13]").val(ls_pto["trans_wasted0"]);
+            $("input[name=key10]").val(ls_pto["trans_wasted1"]);
+            $("input[name=key11]").val(ls_pto["trans_wasted6"]);
+            $("input[name=key60]").val(ls_pto["longitude_c"]);
+            $("input[name=key61]").val(ls_pto["latitude_c"]);
+          }
+        }
+       }
+        $("#b-cancel").click(function() {
+          console.log("Cancel");
+          document.location = "pebblejs://close";
+        });
+        $("#b-submit").click(function() {
+          console.log("Submit");
+          ls_pto = JSON.stringify(saveOptions());
+          if (typeof window.localStorage !== "undefined") {
+            window.localStorage.pebble_drunkoclock_options = ls_pto;
+          }
+          var location = "pebblejs://close#" + encodeURIComponent(ls_pto);
+          console.log("Warping to: " + location);
+          console.log(location);
+          document.location = location;
+        });
+      });
+    </script>
+  </body>
+</html>
