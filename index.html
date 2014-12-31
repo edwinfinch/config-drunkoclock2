@@ -85,8 +85,8 @@ Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
 
 <fieldset data-role="controlgroup" data-mini="true">
     <div class="ui-field-contain">
-      <label for="key61" id="label_key61">Swear word update frequency (minutes)</label>
-      <input name="key61" id="trans_key61" placeholder="5" value="5" data-mini="true" type="text" maxlength="2">
+      <label for="updateFreqKey" id="label_updateFreqKey">Swear word update frequency (minutes)</label>
+      <input name="updateFreqKey" id="trans_updateFreqKey" placeholder="5" value="5" data-mini="true" type="text" maxlength="2">
     </div>
 </fieldset>
 
@@ -343,7 +343,8 @@ or type in "noLOC" without quotes.
 
               //Other
               'slotcustomtext': $("input[name=key11]").val(),
-              'customLoc': $("input[name=key13").val(),
+              'customLoc': $("input[name=key13]").val(),
+              'updateFreq': $("input[name=updateFreqKey]").val(),
           	  
         }
         return options;
@@ -408,6 +409,7 @@ or type in "noLOC" without quotes.
             //Other
             $("input[name=key11]").val(ls_pto["slotcustomtext"]);
             $("input[name=key13]").val(ls_pto["customLoc"]);
+            $("input[name=updateFreqKey]").val(ls_pto["updateFreq"]);
         }
        }
         $("#b-cancel").click(function() {
