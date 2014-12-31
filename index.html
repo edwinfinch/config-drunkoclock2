@@ -18,23 +18,6 @@
 
 <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
 
-    <div data-role="collapsible">
-        <h3>Note from developer</h3>
-<p>
-Hello, and welcome to Drunk O' Clock if you've never used it before. Thanks for downloading my watchface
-and I hope you enjoy it :)<br><br>
-
-I have a few things to say,<br>
-1. Please stop emailing me about how this watchface swears, how it's offensive, etc. Don't download this watchface
-if you are offended about this. You downloaded it knowing that it's offensive.<br>
-2. If you are upgrading from 1.x and are having issues, please <a href="mailto:contact@edwinfinch.com">email me.</a><br>
-3. I have removed the N word completely. Feel free to re-add it in the translation settings.
-<br><br>
-
-Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
-</p>
-    </div>
-
  <div data-role="collapsible">
         <h3>Look and Feel</h3>
 
@@ -143,7 +126,7 @@ Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
     <legend>Bluetooth reconnect alert</legend>
         <input name="key8" id="key8-0" value="0" checked="checked" type="radio">
         <label for="key8-0">Off</label>
-        <input name="key8" id="key8-1" value="0" type="radio">
+        <input name="key8" id="key8-1" value="1" type="radio">
         <label for="key8-1">On</label>
 </fieldset>
 
@@ -152,7 +135,7 @@ Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
     <legend>Bluetooth disconnect alert</legend>
         <input name="key9" id="key9-0" value="0" checked="checked" type="radio">
         <label for="key9-0">Off</label>
-        <input name="key9" id="key9-1" value="0" type="radio">
+        <input name="key9" id="key9-1" value="1" type="radio">
         <label for="key9-1">On</label>
 </fieldset>
 
@@ -291,6 +274,35 @@ or type in "noLOC" without quotes.
     </div>
 </fieldset>
     </div>
+
+    <div data-role="collapsible">
+        <h3>Advanced Settings & Note from Developer</h3>
+
+<fieldset data-role="controlgroup" data-mini="true">
+    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Discreet Alerts</legend>
+    <i>These alerts allow you to tell when the weather/settings/etc. has been updated. It's a small bar that goes away after 6 seconds.</i>
+        <input name="key35" id="key35-1" value="1" checked="checked" type="radio">
+        <label for="key35-1">On</label>
+        <input name="key35" id="key35-0" value="0" type="radio">
+        <label for="key35-0">Off</label>
+</fieldset>
+
+<p>
+Oh hello there! (and welcome to Drunk O' Clock if you've never used it before) Thanks for downloading my watchface
+and I hope you enjoy it :)<br><br>
+
+I have a few things to say,<br>
+1. Please stop emailing me about how this watchface swears, how it's offensive, etc. Don't download this watchface
+if you are offended about this. You downloaded it knowing that it's offensive.<br>
+2. If you are upgrading from 1.x and are having issues (or any other issues), please <a href="mailto:contact@edwinfinch.com">email me.</a><br>
+3. I have removed the N word completely. Feel free to re-add it in the translation settings.
+<br><br>
+
+Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
+</p>
+    </div>
+
 </div>
 <br />
         <div class="ui-body ui-body-c">
@@ -316,6 +328,7 @@ or type in "noLOC" without quotes.
               'btdisalert':     Number( $("input[name=key9]:checked").val() ),
               'bottomslot':     Number( $("input[name=key10]:checked").val() ),
               'temppref':     Number( $("input[name=key12]:checked").val() ),
+              'alerts':     Number( $("input[name=key35]:checked").val() ),
 
               //Sober
               'soberWord1': $("input[name=soberWord1").val(),
@@ -379,6 +392,8 @@ or type in "noLOC" without quotes.
           $("input[name=key10]").checkboxradio('refresh');
           $("input[name=key12][id=key12-"+ls_pto["temppref"]+"]").prop('checked',true);
           $("input[name=key12]").checkboxradio('refresh');
+          $("input[name=key35][id=key35-"+ls_pto["alerts"]+"]").prop('checked',true);
+          $("input[name=key35]").checkboxradio('refresh');
 
 
             //Sober
