@@ -136,8 +136,8 @@
       $().ready(function() {
        if (typeof window.localStorage !== "undefined") {
        	console.log("Not undefined :)");
-        if (window.localStorage.pebble_doc2_bluetooth_options) {
-          ls_pto = JSON.parse(window.localStorage.pebble_doc2_bluetooth_options);
+        if (window.localStorage.pebble_DOCbops) {
+          ls_pto = JSON.parse(window.localStorage.pebble_DOCbops);
 
             //Sober
             $("input[name=soberPhrase1]").val(ls_pto["soberPhrase1_bluetooth"]);
@@ -172,7 +172,7 @@
           console.log("Submit");
           ls_pto = JSON.stringify(saveOptions());
           if (typeof window.localStorage !== "undefined") {
-            window.localStorage.pebble_doc2_bluetooth_options = ls_pto;
+            window.localStorage.pebble_DOCbops = ls_pto;
           }
           var location = "pebblejs://close#" + encodeURIComponent(ls_pto);
           console.log("Warping to: " + location);
