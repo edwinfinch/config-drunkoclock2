@@ -176,8 +176,9 @@
         <label for="key12-1">Fahrenheit</label>
 </fieldset>
 
-<i>Drunk O' Clock now supports custom locations. Please enter your location in the following format:
-<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]</b><br><br></i>
+<i>Please enter your location in the following format:
+<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]. For example, Toronto Ontario would be Toronto,ON.
+New York would be New York,NY</b><br><br></i>
 
 Entering it in incorrectly can result in errors. If you want this feature off, leave the field completely blank
 or type in "noLOC" without quotes.
@@ -191,7 +192,8 @@ or type in "noLOC" without quotes.
     
 <div data-role="collapsible" >
         <h3>Word Translations</h3>
-        <i>Words are limited to 16 characters currently, and the watchface will resize the font accordingly.</i>
+        <i>Words are limited to 16 characters currently, and the watchface will resize the font accordingly. These words are only
+          applied to the main time, and not anywhere else in the watchface.</i>
         <h2>Sober</h2>
 <fieldset data-role="controlgroup" data-mini="true">
     <div class="ui-field-contain">
@@ -275,6 +277,23 @@ or type in "noLOC" without quotes.
       <input name="wastedWord6" id="trans_wastedWord6" placeholder="Enter Translation" value="fuckity" data-mini="true" type="text" maxlength="16">
     </div>
 </fieldset>
+    </div>
+
+        <div data-role="collapsible">
+        <h3>Other Translations</h3>
+<b>If you click a button, all settings changed made on this page before hitting save on this page will be lost.<br></b>
+<form action="https://edwinfinch.github.io/config-drunkoclock2/weather">
+    <input type="submit" value="Weather Phrases">
+</form>
+<form action="https://edwinfinch.github.io/config-drunkoclock2/bluetooth">
+    <input type="submit" value="Bluetooth Phrases">
+</form>
+<form action="https://edwinfinch.github.io/config-drunkoclock2/slot">
+    <input type="submit" value="Slot Words">
+</form>
+<br>
+<i>A separate page is required to translate weather phrases because there seems to be problems with sending a ton of data over to Pebble through iOS
+  all at once, so I am breaking it up into small pieces.</i>
     </div>
 
     <div data-role="collapsible">
