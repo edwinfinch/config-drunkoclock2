@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sober Bluetooth</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="main">
+      <div data-role="header" class="jqm-header">
+        <h1>Sober Bluetooth</h1>
+      </div>
+
+      <div data-role="content">
+
+<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
+
+<form action="https://edwinfinch.github.io/config-drunkoclock2/">
+    <input type="submit" value="Back (Will lose edits)">
+</form>
+
+<i>If you make the phrases too long, there might be cut off/overlapping text.</i><br>
+
+<fieldset data-role="controlgroup" data-mini="true">
+  <h3>Connected</h3>
+    <div class="ui-field-contain">
+      <input name="soberPhrase1" id="trans_soberPhrase1" placeholder="Enter Translation" value="Connected :)" data-mini="true" type="text" maxlength="24">
+    </div>
+    <div class="ui-field-contain">
+      <input name="soberPhrase2" id="trans_soberPhrase2" placeholder="Enter Translation" value="Hooray, connection!" data-mini="true" type="text" maxlength="24">
+    </div>
+    <div class="ui-field-contain">
+      <input name="soberPhrase3" id="trans_soberPhrase3" placeholder="Enter Translation" value="Lovely BT is working" data-mini="true" type="text" maxlength="24">
+    </div>
+    <h3>Disconnected</h3>
+    <div class="ui-field-contain">
+      <input name="soberPhrase4" id="trans_soberPhrase4" placeholder="Enter Translation" value="Disconnected :(" data-mini="true" type="text" maxlength="24">
+    </div>
+    <div class="ui-field-contain">
+      <input name="soberPhrase5" id="trans_soberPhrase5" placeholder="Enter Translation" value="Oops, BT's off" data-mini="true" type="text" maxlength="24">
+    </div>
+    <div class="ui-field-contain">
+      <input name="soberPhrase6" id="trans_soberPhrase6" placeholder="Enter Translation" value="Darn thing's off" data-mini="true" type="text" maxlength="24">
+    </div>
+</fieldset>
+
+</div>
+<br />
+        <div class="ui-body ui-body-c">
+          <fieldset class="ui-grid-a">
+              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Save</button></div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <script>
+      function saveOptions() {
+        var options = {
+              'soberPhrase1_bluetooth': $("input[name=soberPhrase1").val(),
+              'soberPhrase2_bluetooth': $("input[name=soberPhrase2").val(),
+              'soberPhrase3_bluetooth': $("input[name=soberPhrase3").val(),
+              'soberPhrase4_bluetooth': $("input[name=soberPhrase4").val(),
+              'soberPhrase5_bluetooth': $("input[name=soberPhrase5").val(),
+              'soberPhrase6_bluetooth': $("input[name=soberPhrase6").val(),
+        }
+        return options;
+      }
+      $().ready(function() {
+       if (typeof window.localStorage !== "undefined") {
+       	console.log("Not undefined :)");
+        if (window.localStorage.pebble_doc2_SBTOPS) {
+          ls_pto = JSON.parse(window.localStorage.pebble_doc2_SBTOPS);
+
+            //Sober
+            $("input[name=soberPhrase1]").val(ls_pto["soberPhrase1_bluetooth"]);
+            $("input[name=soberPhrase2]").val(ls_pto["soberPhrase2_bluetooth"]);
+            $("input[name=soberPhrase3]").val(ls_pto["soberPhrase3_bluetooth"]);
+            $("input[name=soberPhrase4]").val(ls_pto["soberPhrase4_bluetooth"]);
+            $("input[name=soberPhrase5]").val(ls_pto["soberPhrase5_bluetooth"]);
+            $("input[name=soberPhrase6]").val(ls_pto["soberPhrase6_bluetooth"]);
+        }
+       }
+        $("#b-cancel").click(function() {
+          console.log("Cancel");
+          document.location = "pebblejs://close";
+        });
+        $("#b-submit").click(function() {
+          console.log("Submit");
+          ls_pto = JSON.stringify(saveOptions());
+          if (typeof window.localStorage !== "undefined") {
+            window.localStorage.pebble_doc2_SBTOPS = ls_pto;
+          }
+          var location = "pebblejs://close#" + encodeURIComponent(ls_pto);
+          console.log("Warping to: " + location);
+          console.log(location);
+          document.location = location;
+        });
+      });
+    </script>
+  </body>
+</html>

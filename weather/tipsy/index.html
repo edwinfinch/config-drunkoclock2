@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tipsy Weather</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="main">
+      <div data-role="header" class="jqm-header">
+        <h1>Tipsy Weather</h1>
+      </div>
+
+      <div data-role="content">
+
+<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
+
+  <form action="https://edwinfinch.github.io/config-drunkoclock2/">
+    <input type="submit" value="Back (Will lose edits)">
+</form>
+
+<i>If you make the phrases too long, there might be cut off/overlapping text.</i>
+
+        <h2>Tipsy</h2>
+<fieldset data-role="controlgroup" data-mini="true">
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase1" id="label_tipsyPhrase1">Storms:</label>
+      <input name="tipsyPhrase1" id="trans_tipsyPhrase1" placeholder="Enter Translation" value="Aw shit, storms" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase2" id="label_tipsyPhrase2">Light Rain:</label>
+      <input name="tipsyPhrase2" id="trans_tipsyPhrase2" placeholder="Enter Translation" value="Cocking rain showers" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase3" id="label_tipsyPhrase3">Heavy Rain:</label>
+      <input name="tipsyPhrase3" id="trans_tipsyPhrase3" placeholder="Enter Translation" value="Pissing it down" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase4" id="label_tipsyPhrase4">Snow:</label>
+      <input name="tipsyPhrase4" id="trans_tipsyPhrase4" placeholder="Enter Translation" value="Snow, you Canadian" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase5" id="label_tipsyPhrase5">Fog:</label>
+      <input name="tipsyPhrase5" id="trans_tipsyPhrase5" placeholder="Enter Translation" value="Can't see shit" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase6" id="label_tipsyPhrase6">Clear:</label>
+      <input name="tipsyPhrase6" id="trans_tipsyPhrase6" placeholder="Enter Translation" value="Nice day, dick" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase7" id="label_tipsyPhrase7">Cloudy:</label>
+      <input name="tipsyPhrase7" id="trans_tipsyPhrase7" placeholder="Enter Translation" value="Few wanky clouds" data-mini="true" type="text" maxlength="30">
+    </div>
+    <div class="ui-field-contain">
+      <label for="tipsyPhrase8" id="label_tipsyPhrase8">Overcast:</label>
+      <input name="tipsyPhrase8" id="trans_tipsyPhrase8" placeholder="Enter Translation" value="Holy shit, overcast" data-mini="true" type="text" maxlength="30">
+    </div>
+</fieldset>
+
+</div>
+<br />
+        <div class="ui-body ui-body-c">
+          <fieldset class="ui-grid-a">
+              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Save</button></div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <script>
+      function saveOptions() {
+        var options = {
+              'tipsyPhrase1': $("input[name=tipsyPhrase1").val(),
+              'tipsyPhrase2': $("input[name=tipsyPhrase2").val(),
+              'tipsyPhrase3': $("input[name=tipsyPhrase3").val(),
+              'tipsyPhrase4': $("input[name=tipsyPhrase4").val(),
+              'tipsyPhrase5': $("input[name=tipsyPhrase5").val(),
+              'tipsyPhrase6': $("input[name=tipsyPhrase6").val(),
+              'tipsyPhrase7': $("input[name=tipsyPhrase7").val(),
+              'tipsyPhrase8': $("input[name=tipsyPhrase8").val(),
+        }
+        return options;
+      }
+      $().ready(function() {
+       if (typeof window.localStorage !== "undefined") {
+       	console.log("Not undefined :)");
+        if (window.localStorage.pebble_doc2_WTOPS) {
+          ls_pto = JSON.parse(window.localStorage.pebble_doc2_WTOPS);
+            $("input[name=tipsyPhrase1]").val(ls_pto["tipsyPhrase1"]);
+            $("input[name=tipsyPhrase2]").val(ls_pto["tipsyPhrase2"]);
+            $("input[name=tipsyPhrase3]").val(ls_pto["tipsyPhrase3"]);
+            $("input[name=tipsyPhrase4]").val(ls_pto["tipsyPhrase4"]);
+            $("input[name=tipsyPhrase5]").val(ls_pto["tipsyPhrase5"]);
+            $("input[name=tipsyPhrase6]").val(ls_pto["tipsyPhrase6"]);
+            $("input[name=tipsyPhrase7]").val(ls_pto["tipsyPhrase7"]);
+            $("input[name=tipsyPhrase8]").val(ls_pto["tipsyPhrase8"]);
+        }
+       }
+        $("#b-cancel").click(function() {
+          console.log("Cancel");
+          document.location = "pebblejs://close";
+        });
+        $("#b-submit").click(function() {
+          console.log("Submit");
+          ls_pto = JSON.stringify(saveOptions());
+          if (typeof window.localStorage !== "undefined") {
+            window.localStorage.pebble_doc2_WTOPS = ls_pto;
+          }
+          var location = "pebblejs://close#" + encodeURIComponent(ls_pto);
+          console.log("Warping to: " + location);
+          console.log(location);
+          document.location = location;
+        });
+      });
+    </script>
+  </body>
+</html>
