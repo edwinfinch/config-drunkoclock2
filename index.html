@@ -176,16 +176,12 @@
         <label for="key12-1">Fahrenheit</label>
 </fieldset>
 
-<i>Please enter your location in the following format:
-<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]. For example, Toronto Ontario would be Toronto,ON.
-New York would be New York,NY</b><br><br></i>
-
-Entering it in incorrectly can result in errors. If you want this feature off, leave the field completely blank
-or type in "noLOC" without quotes.
+<i>If you want a custom location, enter it in below.<br>
+Otherwise, leave it blank and Drunk O' Clock will use location.</i>
 
 	<div class="ui-field-contain">
-      <label for="key13" id="label_key13"><b>Custom City/location:</b></label>
-      <input name="key13" id="trans_key13" placeholder="Toronto,ca" value="noLOC" data-mini="true" type="text" maxlength="24">
+      <label for="key13" id="label_key13"><b>Custom location:</b></label>
+      <input name="key13" id="trans_key13" placeholder="Toronto" value="" data-mini="true" type="text" maxlength="24">
     </div>
 
     </div>
@@ -283,10 +279,7 @@ or type in "noLOC" without quotes.
 
         <div data-role="collapsible">
         <h3>Other Translations</h3>
-<b>If you click a button, all settings changed made on this page before hitting save on this page will be lost.<br></b>
-<form action="https://edwinfinch.github.io/config-drunkoclock2/weather">
-    <input type="submit" value="Weather Phrases">
-</form>
+<b>If you click a button below, all settings changed made on this page before hitting save on this page will be lost.<br></b>
 <form action="https://edwinfinch.github.io/config-drunkoclock2/bluetooth">
     <input type="submit" value="Bluetooth Phrases">
 </form>
