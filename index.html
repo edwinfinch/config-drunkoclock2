@@ -21,14 +21,6 @@
  <div data-role="collapsible">
         <h3>Look and Feel</h3>
 
-<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-    <legend>Theme</legend>
-        <input name="key0" id="key0-0" data-type="int" value="0" checked="checked" type="radio">
-        <label for="key0-0">Dark</label>
-        <input name="key0" id="key0-1" value="1" type="radio">
-        <label for="key0-1">Light</label>
-</fieldset>
-
 <fieldset data-role="controlgroup" data-mini="true">
     <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Word Pack</legend>
@@ -292,7 +284,7 @@ Otherwise, leave it blank and Drunk O' Clock will use location.</i>
     </div>
 
     <div data-role="collapsible">
-        <h3>Advanced Settings & Note from Developer</h3>
+        <h3>Advanced</h3>
 
 <fieldset data-role="controlgroup" data-mini="true">
     <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
@@ -305,17 +297,7 @@ Otherwise, leave it blank and Drunk O' Clock will use location.</i>
 </fieldset>
 
 <p>
-Oh hello there! (and welcome to Drunk O' Clock if you've never used it before) Thanks for downloading my watchface
-and I hope you enjoy it :)<br><br>
-
-I have a few things to say,<br>
-1. Please stop emailing me about how this watchface swears, how it's offensive, etc. Don't download this watchface
-if you are offended about this. You downloaded it knowing that it's offensive.<br>
-2. If you are upgrading from 1.x and are having issues (or any other issues), please <a href="mailto:contact@edwinfinch.com">email me.</a><br>
-3. I have removed the N word completely. Feel free to re-add it in the translation settings.
-<br><br>
-
-Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
+Enjoy Drunk O' Clock, <blink>mother fucker :)
 </p>
     </div>
 
@@ -333,7 +315,6 @@ Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
 
       function saveOptions() {
         var options = {
-              'theme':     Number( $("input[name=key0]:checked").val() ),
               'wordpack':     Number( $("input[name=key1]:checked").val() ),
               'progressive':     Number( $("input[name=key2]:checked").val() ),
               'animation':     Number( $("input[name=key3]:checked").val() ),
@@ -385,8 +366,6 @@ Enjoy Drunk O' Clock, <blink>mother fucker :)</blink>
         if (window.localStorage.pebble_drunkoclock2_options) {
           ls_pto = JSON.parse(window.localStorage.pebble_drunkoclock2_options);
           // the Pebble webview dies on the next line...
-          $("input[name=key0][id=key0-"+ls_pto["theme"]+"]").prop('checked',true);
-          $("input[name=key0]").checkboxradio('refresh');
           $("input[name=key1][id=key1-"+ls_pto["wordpack"]+"]").prop('checked',true);
           $("input[name=key1]").checkboxradio('refresh');
           $("input[name=key2][id=key2-"+ls_pto["progressive"]+"]").prop('checked',true);
